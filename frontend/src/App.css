@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 38px 0;
+}
+
+.topbar,
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.eyebrow {
+  color: #5267d9;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.subtitle,
+.panel-heading p {
+  color: #738096;
+  margin: 8px 0 0;
+}
+
+.refresh-btn,
+.secondary-btn,
+.edit-btn,
+.delete-btn {
+  padding: 9px 13px;
+  border: 1px solid #dce2ee;
+  border-radius: 8px;
+  background: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.stat-card,
+.panel {
+  background: white;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px #18254a08;
+}
+
+.stat-card {
+  padding: 20px;
+}
+
+.stat-card span {
+  display: block;
+  color: #738096;
+  font-size: 14px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 30px;
+}
+
+.panel {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task-form input,
+.task-form select,
+.task-form textarea,
+.status-select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #dce2ee;
+  border-radius: 8px;
+  background: white;
+  color: #172033;
+  min-width: 0;
+}
+
+.task-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.description-field {
+  grid-column: span 2;
+}
+
+.primary-btn {
+  align-self: end;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #5267d9;
+  color: white;
+  font-weight: bold;
+}
+
+.primary-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.task-count {
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #eef1ff;
+  color: #5267d9;
+  font-size: 13px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #edf0f6;
+  vertical-align: middle;
+}
+
+th {
+  color: #738096;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-description {
+  color: #738096;
+  font-size: 13px;
+  margin: 7px 0 0;
+  max-width: 260px;
+}
+
+.priority {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.priority.low {
+  background: #e5f7ed;
+  color: #167345;
+}
+
+.priority.medium {
+  background: #fff2d7;
+  color: #926100;
+}
+
+.priority.high {
+  background: #ffe7e7;
+  color: #b42323;
+}
+
+.status-select {
+  min-width: 125px;
+  padding: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  color: #4058c7;
+}
+
+.delete-btn {
+  color: #c33434;
+}
+
+.error {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #a32020;
+}
+
+.empty {
+  padding: 28px 0;
+  color: #738096;
+  text-align: center;
+}
+
+footer {
+  padding: 10px 0;
+  color: #738096;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .app {
+    width: 94%;
+    padding: 24px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .panel {
+    padding: 17px;
+  }
+
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+
+  .description-field {
+    grid-column: auto;
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .refresh-btn {
+    flex-shrink: 0;
+  }
+}
